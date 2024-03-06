@@ -46,6 +46,7 @@ function Home() {
         await appwriteService.sendMessage(data);
         setValue("body", "");
         setValue("img", {});
+        console.clear();
     }
 
 
