@@ -10,7 +10,7 @@ function Home() {
     const { register, handleSubmit, watch, setValue } = useForm({
         defaultValues: {
             body: "",
-            image: "",
+            img: "",
             userId: ""
         }
     });
@@ -29,24 +29,21 @@ function Home() {
     }, [selectedFiles])
 
     const send = async (data) => {
-        if (data) {
+        if (data.img && data.img.length > 0) {
             if (data.img[0]) {
                 const file = await appwriteService.uploadFile(data.img[0]);
-                if (file) {
-                    const fileId = file.$id;
-                    data.image = fileId;
-                }
+
+                if (file) data.image = file.$id;
             }
         }
         if (userData) {
             data.userName = userData.name;
             data.userId = userData.$id;
         }
-
-        await appwriteService.sendMessage(data);
+        if(data.image || data.body!="") await appwriteService.sendMessage(data);
         setValue("body", "");
         setValue("img", {});
-        console.clear();
+        
     }
 
 
@@ -94,7 +91,7 @@ function Home() {
                         <button
                             type='submit'
                             className=' text-white scale-150 pr-1'
-                            onClick={send}
+                            
                         >
                             ➡️
                         </button></div>
