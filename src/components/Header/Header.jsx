@@ -8,7 +8,7 @@ function Header() {
     const dispatch = useDispatch();
     const userStatus = useSelector(state => state.auth.status);//if true then logged in otherwise logged uot
     const userData = useSelector(state => state.auth.userData)
-
+    
     const logout = async () => {
         try {
             await authService.logout();
