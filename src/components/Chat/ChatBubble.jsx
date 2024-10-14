@@ -32,7 +32,7 @@ function ChatBubble({ image = null, message, userId,userName, time ,$id=""}) {
                 <div className='flex justify-between'>
                     <div className='text-xs w-fit px-2  opacity-70 bg-slate-100 rounded-t-xl'>{`👤${userName}🕗${hour}:${minute}`}
                     </div>
-                    { (UserID === userId || UserID === "65e438a8573dc79d3da0")  && <button className='px-0.5 text-md bg-gray-100 rounded-full opacity-50 hover:opacity-80 shadow-sm shadow-black border border-black' onClick={deleteMessage} >🗑️</button>}
+                    { (UserID === userId || UserID === "670d042ab013c7767adb")  && <button className='px-0.5 text-md bg-gray-100 rounded-full opacity-50 hover:opacity-80 shadow-sm shadow-black border border-black' onClick={deleteMessage} >🗑️</button>}
                 </div>
                 <div className="w-fit shadow-md shadow-gray-800 first-line: px-4 bg-gray100 rounded-b-xl rounded-r-xl p-2 border bg-blue-300">
                     <div className="w-full justify-center mb-4">
